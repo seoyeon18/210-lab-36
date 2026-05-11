@@ -2,12 +2,16 @@
 #ifndef INTBINARYTREE_H
 #define INTBINARYTREE_H
 
+#include <iostream>
+#include <string>
+using namespace std;
+
 // The IntBinaryTree class manages a binary tree of integers.
 class IntBinaryTree {
 private:
    // TreeNode is a private structure for IntBinaryTree nodes.
    struct TreeNode {
-      int value;         // The value in the node
+      string value;         // The value in the node
       TreeNode *left;    // Pointer to left child node
       TreeNode *right;   // Pointer to right child node
    };
@@ -18,7 +22,7 @@ private:
    // Private member functions for internal operations.
    void insert(TreeNode *&, TreeNode *&);
    void destroySubTree(TreeNode *);
-   void deleteNode(int, TreeNode *&);
+   void deleteNode(string, TreeNode *&);
    void makeDeletion(TreeNode *&);
    void displayInOrder(TreeNode *) const;
    void displayPreOrder(TreeNode *) const;
@@ -32,9 +36,9 @@ public:
    ~IntBinaryTree()    { destroySubTree(root); }
 
    // Public interface for inserting, searching, and removing nodes.
-   void insertNode(int);
-   bool searchNode(int);
-   void remove(int);
+   void insertNode(string);
+   bool searchNode(string);
+   void remove(string);
 
    // Public wrappers for tree traversal functions.
    void displayInOrder() const     {  displayInOrder(root); }
@@ -44,7 +48,7 @@ public:
 
 // Implementation file for the IntBinaryTree class
 #include <iostream>
-#include "IntBinaryTree.h"
+
 using namespace std;
 
 // insert accepts a TreeNode pointer and a pointer to a node.
@@ -57,16 +61,18 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
       insert(nodePtr->left, newNode);     // Search the left branch
    else 
       insert(nodePtr->right, newNode);    // Search the right branch
+   else
+      delete newNode;
 }
 
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.                  
-void IntBinaryTree::insertNode(int num) {
+void IntBinaryTree::insertNode(int code) {
    TreeNode *newNode;      // Pointer to a new node.
 
    // Create a new node and store num in it.
    newNode = new TreeNode;
-   newNode->value = num;
+   newNode->value = code;
    newNode->left = newNode->right = nullptr;
    
    // Insert the node.
