@@ -48,8 +48,14 @@ int main() {
                 cout << "Delete selected." << endl;
                 break;
             case 3:
-                cout << "Search selected." << endl;
-                break;
+                 cout << "Enter code to search: ";
+                cin >> code;
+
+                if (tree.searchNode(code)) {
+                cout << "Code found." << endl;
+                } else {
+                cout << "Code not found." << endl;
+                }
             case 4:
                 cout << "Modify selected." << endl;
                 break;
