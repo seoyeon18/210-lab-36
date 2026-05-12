@@ -35,7 +35,14 @@ int main() {
 
         switch (choice) {
             case 1:
-                cout << "Add selected." << endl;
+                cout << "Enter code to add:";
+                cin >> code;
+
+                if (tree.searchNode(code)) {
+                cout << "That code already exists" << endl;
+                } else {
+                tree.insertNode(code);
+                }
                 break;
             case 2:
                 cout << "Delete selected." << endl;
