@@ -13,6 +13,12 @@ int main() {
         return 1;
     }
 
+    string code;
+
+    while (inputFile >> code) {
+        tree.insertNode(code);
+    }
+    
     inputFile.close();
 
     return 0;
