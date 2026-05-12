@@ -55,7 +55,6 @@ int main()
             }
             break;
         case 2:
-        case 2:
             cout << "Enter code to delete: ";
             cin >> code;
 
