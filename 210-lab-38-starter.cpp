@@ -26,6 +26,38 @@ int main() {
     cout << "Codes in sorted order:";
     tree.displayInOrder();
 
+        int choice;
+
+    do {
+        showMenu();
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Add selected." << endl;
+                break;
+            case 2:
+                cout << "Delete selected." << endl;
+                break;
+            case 3:
+                cout << "Search selected." << endl;
+                break;
+            case 4:
+                cout << "Modify selected." << endl;
+                break;
+            case 5:
+                tree.displayInOrder();
+                break;
+            case 6:
+                cout << "Goodbye." << endl;
+                break;
+            default:
+                cout << "Invalid choice." << endl;
+        }
+
+    } while (choice != 6);
+
     return 0;
 }
 
