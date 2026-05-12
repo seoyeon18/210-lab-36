@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "IntBinaryTree.h"
+
 using namespace std;
 
 int main() {
@@ -26,4 +27,15 @@ int main() {
     tree.displayInOrder();
 
     return 0;
+}
+
+void showMenu() {
+    cout << "========== Code BST Menu ==========" << endl;
+    cout << "1. Add a code" << endl;
+    cout << "2. Delete a code" << endl;
+    cout << "3. Search for a code" << endl;
+    cout << "4. Modify a code" << endl;
+    cout << "5. Display all codes" << endl;
+    cout << "6. Quit" << endl;
+    cout << "===================================" << endl;
 }
