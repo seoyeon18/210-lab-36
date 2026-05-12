@@ -18,8 +18,12 @@ int main() {
     while (inputFile >> code) {
         tree.insertNode(code);
     }
-    
+
     inputFile.close();
+
+    cout << "Codes loaded into BST" << endl;
+    cout << "Codes in sorted order:";
+    tree.displayInOrder();
 
     return 0;
 }
