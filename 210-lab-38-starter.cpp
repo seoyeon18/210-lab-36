@@ -45,10 +45,19 @@ int main() {
                 }
                 break;
             case 2:
-                cout << "Delete selected." << endl;
+                case 2:
+                cout << "Enter code to delete: ";
+                cin >> code;
+
+                if (tree.searchNode(code)) {
+                tree.remove(code);
+                cout << "Code deleted" << endl;
+                } else {
+                cout << "Code not found" << endl;
+                }
                 break;
             case 3:
-                 cout << "Enter code to search: ";
+                 cout << "Enter code to search:";
                 cin >> code;
 
                 if (tree.searchNode(code)) {
